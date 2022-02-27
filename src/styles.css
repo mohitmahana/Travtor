@@ -24,6 +24,9 @@ router-outlet + * {
 	padding: 0 16px;
 	padding-top: 16px;
 }
+app-car-sort {
+	width: 100%;
+}
 
 /* Text */
 
