@@ -1,0 +1,18 @@
+<div class="grid">
+	<div class="col-12">
+		<span>
+			{{ filterModel?.pickUpLocation }}
+		</span>
+	</div>
+	<div class="col-12">
+		<span>{{ filterModel?.pickUpDate }}</span>
+		<span *ngIf="filterModel?.pickUpTime"> , </span>
+		<span>{{ filterModel?.pickUpTime }}</span>
+		<span *ngIf="filterModel?.dropOffDate || filterModel?.dropOffTime">
+			-
+		</span>
+		<span>{{ filterModel?.dropOffDate }}</span>
+		<span *ngIf="filterModel?.dropOffTime"> , </span>
+		<span>{{ filterModel?.dropOffTime }}</span>
+	</div>
+</div>

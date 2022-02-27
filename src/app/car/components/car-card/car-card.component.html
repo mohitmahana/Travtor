@@ -1,0 +1,77 @@
+<div class="grid container">
+	<div class="col-4">
+		<div>
+			<img [src]="car.vehicle.image" style="height: 45px" />
+		</div>
+	</div>
+	<div class="col-8">
+		<div class="grid car-type">
+			<div class="col-12 no-padding">
+				<span class="type">{{ car.vehicle.type }}</span>
+			</div>
+			<div class="col-12 no-padding">
+				<span class="car-name">{{ car.vehicle.name }}</span>
+			</div>
+			<div class="col-12">
+				<div class="grid passenger">
+					<div class="col-3">
+						<div class="grid">
+							<div class="col-6">
+								<i class="material-icons"> people_outlined </i>
+							</div>
+							<div class="col-6">
+								<span>{{ car.vehicle.specifications.passengerCapacity }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-3">
+						<div class="grid">
+							<div class="col-6">
+								<i class="material-icons"> work_outlined </i>
+							</div>
+							<div class="col-6">
+								<span> {{ car.vehicle.specifications.baggageCapacity }}</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-6" *ngIf="car?.unlimitedMileage">
+						<div class="grid">
+							<div class="col-3">
+								<i class="material-icons"> speed </i>
+							</div>
+							<div class="col-9 unlimited-milege">
+								<span i18n="@@unlimitedMiles">Unlimited Miles</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="col-12 mt-18"
+		*ngIf="car?.cancellationDetails?.isCancellationFree"
+	>
+		<span
+			><span class="free-cancelation" i18n="@@freeCancellation"
+				>Free Cancellation</span
+			>
+			until
+			{{
+				car?.cancellationDetails?.freeCancellationEndDate | date: 'MMM d, y'
+			}}</span
+		>
+	</div>
+	<div
+		class="col-12 avg-container"
+		*ngIf="car?.cancellationDetails?.isCancellationFree"
+	>
+		<div style="margin-bottom: 8px">
+			<span class="free-cancelation"> ${{ car.fare.perDay }} </span>avg/day
+		</div>
+		<div>
+			Total ({{ numberOfDays }} days ):
+			<span>$ {{ car.fare.totalAmount }}</span>
+		</div>
+	</div>
+</div>

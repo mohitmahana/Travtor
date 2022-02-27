@@ -1,0 +1,146 @@
+<div class="grid car-search" [formGroup]="carFilterForm">
+	<div class="col-12">
+		<span i18n="@@pickUpLocation">PICK - UP - LOCATION</span>
+	</div>
+	<div class="col-12">
+		<input
+			type="text"
+			[ngClass]="{
+				'ng-invalid ng-dirty':
+					onSearchButtonClicked && carFilterForm.get('pickUpLocation')?.errors
+			}"
+			pInputText
+			formControlName="pickUpLocation"
+		/>
+		<small
+			*ngIf="
+				onSearchButtonClicked && carFilterForm.get('pickUpLocation')?.errors
+			"
+			class="p-error block"
+			i18n="@@pickUpLocationError"
+			>PICK - UP - LOCATION is required.</small
+		>
+	</div>
+	<div class="col-6">
+		<div class="grid">
+			<div class="col-12">
+				<span i18n="@@pickUpDate">PICK - UP - DATE</span>
+			</div>
+			<div class="col-12">
+				<p-calendar
+					[ngClass]="{
+						'ng-invalid ng-dirty':
+							onSearchButtonClicked && carFilterForm.get('pickUpDate')?.errors
+					}"
+					formControlName="pickUpDate"
+					[readonlyInput]="true"
+					[showIcon]="true"
+				></p-calendar>
+				<small
+					i18n="@@pickUpDateError"
+					*ngIf="
+						onSearchButtonClicked && carFilterForm.get('pickUpDate')?.errors
+					"
+					class="p-error block"
+					>PICK - UP - DATE is required.</small
+				>
+			</div>
+		</div>
+	</div>
+	<div class="col-6">
+		<div class="grid">
+			<div class="col-12">
+				<span i18n="@@dropOffDate">DROP - OFF - DATE</span>
+			</div>
+			<div class="col-12">
+				<p-calendar
+					[ngClass]="{
+						'ng-invalid ng-dirty':
+							onSearchButtonClicked && carFilterForm.get('dropOffDate')?.errors
+					}"
+					formControlName="dropOffDate"
+					[readonlyInput]="true"
+					[showIcon]="true"
+				></p-calendar>
+				<small
+					i18n="@@dropOffDateError"
+					*ngIf="
+						onSearchButtonClicked && carFilterForm.get('dropOffDate')?.errors
+					"
+					class="p-error block"
+					>DROP - OFF - DATE is required.</small
+				>
+			</div>
+		</div>
+	</div>
+	<div class="col-6">
+		<div class="grid">
+			<div class="col-12">
+				<span i18n="@@pickUpTime">PICK - UP - TIME</span>
+			</div>
+			<div class="col-12">
+				<p-calendar
+					[ngClass]="{
+						'ng-invalid ng-dirty':
+							onSearchButtonClicked && carFilterForm.get('pickUpTime')?.errors
+					}"
+					[timeOnly]="true"
+					formControlName="pickUpTime"
+					[readonlyInput]="true"
+				></p-calendar>
+				<small
+					i18n="@@pickUpTimeError"
+					*ngIf="
+						onSearchButtonClicked && carFilterForm.get('pickUpTime')?.errors
+					"
+					class="p-error block"
+					>PICK - UP - TIME is required.</small
+				>
+			</div>
+		</div>
+	</div>
+	<div class="col-6">
+		<div class="grid">
+			<div class="col-12">
+				<span i18n="@@dropOffTime">DROP - OFF - TIME</span>
+			</div>
+			<div class="col-12">
+				<p-calendar
+					[ngClass]="{
+						'ng-invalid ng-dirty':
+							onSearchButtonClicked && carFilterForm.get('dropOffTime')?.errors
+					}"
+					[timeOnly]="true"
+					formControlName="dropOffTime"
+					[readonlyInput]="true"
+				></p-calendar>
+				<small
+					i18n="@@dropOffTimeError"
+					*ngIf="
+						onSearchButtonClicked && carFilterForm.get('dropOffTime')?.errors
+					"
+					class="p-error block"
+					>DROP - OFF - TIME is required.</small
+				>
+			</div>
+		</div>
+	</div>
+	<div class="col-12 driver-age" *ngIf="Constants.DRIVER_AGE_LIST?.length">
+		<p-dropdown
+			[options]="Constants.DRIVER_AGE_LIST"
+			formControlName="driver"
+			optionLabel="value"
+			placeholder="--SELECT--"
+			dataKey="key"
+			appendTo="body"
+		></p-dropdown>
+	</div>
+	<div class="col-12">
+		<button
+			pButton
+			type="button"
+			label="Search Rental Cars"
+			(click)="filterCar()"
+		></button>
+	</div>
+</div>

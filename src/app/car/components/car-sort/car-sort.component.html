@@ -1,0 +1,36 @@
+<div class="grid" [formGroup]="carSortForm">
+	<div class="col-12">
+		<div class="grid sort-heading">
+			<div class="col-2">
+				<i
+					class="pi pi-arrow-left"
+					(click)="setSortData()"
+					style="font-size: 1rem; color: white"
+				></i>
+			</div>
+			<div class="col-10">
+				<span>Sort</span>
+			</div>
+		</div>
+	</div>
+	<div class="col-12">
+		<ul class="sort-type">
+			<li *ngFor="let sortType of Constants.CAR_SORT_TYPE; let index = index">
+				<div class="grid">
+					<div class="col-2">
+						<p-radioButton
+							name="sortType"
+							[value]="sortType.key"
+							formControlName="sortType"
+							datakey="key"
+							inputId="sortType{{ index }}"
+						></p-radioButton>
+					</div>
+					<div class="col-10">
+						<label for="sortType{{ index }}">{{ sortType.value }}</label>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

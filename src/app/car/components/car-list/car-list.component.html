@@ -1,0 +1,22 @@
+<div [formGroup]="carFilterTypeForm" class="car-filter">
+	<p-selectButton
+		[options]="Constants.FILTER_TYPE"
+		formControlName="filterType"
+		optionLabel="value"
+		(onChange)="selectFilterType()"
+		dataKey="key"
+	></p-selectButton>
+</div>
+<div class="filter-card">
+	<app-car-filter-card [filterModel]="filterModel"></app-car-filter-card>
+</div>
+<div class="car-count">
+	<span>{{ carList?.length }} cars found</span>
+</div>
+<div class="grid">
+	<div class="col-12">
+		<div *ngFor="let car of carList" class="main-container">
+			<app-car-card [car]="car"></app-car-card>
+		</div>
+	</div>
+</div>

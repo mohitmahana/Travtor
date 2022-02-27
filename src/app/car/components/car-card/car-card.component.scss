@@ -1,0 +1,40 @@
+@import '../../../../colors.css';
+.container {
+	padding: 0;
+	.car-type {
+		.type {
+			font-weight: bold;
+			font-size: 18px;
+		}
+		.car-name {
+			font-size: 14px;
+			font-weight: bold;
+		}
+		.passenger {
+			.unlimited-milege {
+				padding-left: 5px;
+				span {
+					font-size: 9px;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.mt-18 {
+		margin-top: 18px;
+	}
+	.avg-container {
+		border-top: 2px solid #e1e1e1;
+		margin-top: 8px;
+		padding: 14px 0 0 0;
+		span {
+			font-weight: bold;
+			font-size: 18px;
+		}
+	}
+	.free-cancelation {
+		font-weight: bold;
+		font-size: 18px;
+		color: var(--pricing);
+	}
+}

@@ -1,0 +1,29 @@
+@import '../../../../colors.css';
+.car-search {
+	input,
+	button {
+		width: 100%;
+	}
+}
+::ng-deep {
+	.car-search {
+		.p-button {
+			background: var(--secondary);
+		}
+		.p-button-label {
+			color: var(--neutral);
+		}
+		.p-button:enabled:hover {
+			background: var(--secondary);
+			border-color: var(--secondary);
+		}
+		.p-button-icon {
+			color: var(--neutral);
+		}
+		.driver-age {
+			.p-dropdown {
+				width: 100%;
+			}
+		}
+	}
+}

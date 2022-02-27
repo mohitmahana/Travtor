@@ -1,0 +1,17 @@
+@import '../../../../colors.css';
+.sort-type {
+	li {
+		list-style: none;
+		padding: 15px 0;
+		label {
+			margin-top: 5px;
+		}
+	}
+}
+.sort-heading {
+	background-color: var(--secondary);
+	span {
+		color: var(--neutral);
+		padding-left: 90px;
+	}
+}
