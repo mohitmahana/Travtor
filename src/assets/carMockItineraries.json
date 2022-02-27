@@ -13,14 +13,6 @@
           "totalAmount": 604,
           "perDay": 45
         },
-        "filterCar":{
-          "driveAge":"10",
-          "pickupLocation":"jaipur",
-          "pickUpDate":"jaipur",
-          "pickUpTime":"jaipur",
-          "dropOffDate":"jaipur",
-          "dropOffTime":"jaipur"
-        },
         "vehicle": {
           "name": "Group A - Kia Rio or similar",
           "type": "Economy",
@@ -41,14 +33,6 @@
         "fare": {
           "totalAmount": 636,
           "perDay": 37
-        },
-        "filterCar":{
-          "driveAge":"15",
-          "pickupLocation":"delhi",
-          "pickUpDate":"jaipur",
-          "pickUpTime":"jaipur",
-          "dropOffDate":"jaipur",
-          "dropOffTime":"jaipur"
         },
         "vehicle": {
           "name": "Group B - Ford Focus or similar",
@@ -71,14 +55,6 @@
           "totalAmount": 636,
           "perDay": 37
         },
-        "filterCar":{
-          "driveAge":"20",
-          "pickupLocation":"mumbai",
-          "pickUpDate":"jaipur",
-          "pickUpTime":"jaipur",
-          "dropOffDate":"jaipur",
-          "dropOffTime":"jaipur"
-        },
         "vehicle": {
           "name": "Group B - Kia Soul or similar",
           "type": "Compact",
@@ -100,14 +76,6 @@
           "totalAmount": 763,
           "perDay": 42
         },
-        "filterCar":{
-          "driveAge":"24",
-          "pickupLocation":"bangalore",
-          "pickUpDate":"jaipur",
-          "pickUpTime":"jaipur",
-          "dropOffDate":"jaipur",
-          "dropOffTime":"jaipur"
-        },
         "vehicle": {
           "name": "Group C - Toyata Corolla or similar",
           "type": "Intermediate",
@@ -128,14 +96,6 @@
         "fare": {
           "totalAmount": 746,
           "perDay": 41
-        },
-        "filterCar":{
-          "driveAge":"30",
-          "pickupLocation":"chennai",
-          "pickUpDate":"jaipur",
-          "pickUpTime":"jaipur",
-          "dropOffDate":"jaipur",
-          "dropOffTime":"jaipur"
         },
         "vehicle": {
           "name": "Group C - Volkswagen Jetta or similar",
