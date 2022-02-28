@@ -8,6 +8,9 @@ import { MockStore } from '@ngrx/store/testing';
 import { setCarSortModel } from 'src/app/state/car.actions';
 import { SortType } from '../../enums/sort-type.enum';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CarSort } from '../../models/car-sort.model';
+import { of } from 'rxjs';
+import { selectCarSortState } from 'src/app/state/car.selectors';
 
 fdescribe('CarSortComponent', () => {
 	let component: CarSortComponent;
@@ -49,5 +52,15 @@ fdescribe('CarSortComponent', () => {
 				carSortModel: carSortModel,
 			})
 		);
+	});
+
+	it('should set Default Data', () => {
+		let carSort: CarSort = new CarSort();
+		carSort.sortType = SortType.PA;
+		spyOn(store, 'pipe').and.returnValue(of(carSort));
+		component.ngOnInit();
+		store.select(selectCarSortState).subscribe((data) => {
+			expect(data.sortType).toEqual(SortType.PA);
+		});
 	});
 });

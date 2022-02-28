@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { selectCarSortState } from 'src/app/state/car.selectors';
 import { setCarSortModel } from '../../../state/car.actions';
 import { Constants } from '../../constants/Constants';
+import { CarSort } from '../../models/car-sort.model';
 import * as fromCar from './../../../state/car.reducer';
 @Component({
 	selector: 'app-car-sort',
@@ -49,6 +51,16 @@ export class CarSortComponent implements OnInit {
 	}
 
 	private setDefaultData() {
-		this.carSortForm.get('sortType')?.setValue(Constants.CAR_SORT_TYPE[0].key);
+		this.store
+			.pipe(select(selectCarSortState))
+			.subscribe((carSort: CarSort) => {
+				if (carSort && Object.keys(carSort)?.length) {
+					this.carSortForm.get('sortType')?.setValue(carSort.sortType);
+				} else {
+					this.carSortForm
+						.get('sortType')
+						?.setValue(Constants.CAR_SORT_TYPE[0].key);
+				}
+			});
 	}
 }
